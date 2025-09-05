@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eid Milad‑un‑Nabi Mubarak</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 20px #00ffcc;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+      to   { text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; }
+    }
+
+    .symbol {
+      font-size: 100px;
+      margin: 30px 0;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .message {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background-color: #00cc99;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #009977;
+    }
+
+    .dua {
+      margin-top: 20px;
+      font-size: 1.2em;
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      width: 2px;
+      height: 2px;
+      animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .video-container {
+      margin-top: 30px;
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      z-index: 2;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .audio-player {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="container">
+    <h1>Eid Milad‑un‑Nabi Mubarak BY ZAKWAN MIRZA 🌙</h1>
+   <div class="symbol">☪️</div>
+    <div class="message">
+      May the blessings of Prophet Muhammad (PBUH) be with you always.
+    </div>
+
+    <!-- Buttons -->
+    <button onclick="showDua()">Show Dua</button>
+    <button onclick="playAudio()">Play Wedding Nasheed (Audio)</button>
+    
+
+    <!-- Dua -->
+    <div class="dua" id="dua">
+      "O Allah! Shower Your mercy and blessings upon our beloved Prophet Muhammad (PBUH), his family, and companions."
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+      <audio id="nasheedAudio" controls>
+        <source src="https://dw.zobj.net/download/v1/brPS4ACBi7PlIdnhuUgFjsZYPmkj_0OvGsQ4arJYwoeWs2sX2ySwWjf21bgmtfotL-iQuh0ZFpOJ7Z9B-YHkFzeakpNVuWZWKDuInmvM0FoXtQqDEvu2qGqhVL3U/?a=&c=72&f=wedding_nasheed.mp3&special=1757054984-ntFfLUqgAmEdxu7zcEszVJo%2BvG0F3hCaIoU9NgeLFqM%3D" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+   
+  <script>
+    function showDua() {
+      document.getElementById("dua").style.display = "block";
+    }
+
+    function playAudio() {
+      const audio = document.getElementById("nasheedAudio");
+      audio.play();
+    }
+
+
+    function createStars() {
+      const starContainer = document.getElementById("stars");
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${2 + Math.random() * 3}s`;
+        starContainer.appendChild(star);
+      }
+    }
+
+    createStars();
+  </script>
+<img src="image1.jpg.jpeg" alt="">
+</body>
+</html>
